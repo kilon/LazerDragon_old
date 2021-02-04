@@ -19,6 +19,22 @@ thisProcess.recompile;
 s.boot;
 k=KeyboardWindow();
 
+// GUI
+(
+var main_window, pwm_knob, pwm_label, enable_synth;
+Window.closeAll;
+main_window = Window.new("LazerDragon v0.01", Rect(100,1200,300,300)).front;
+main_window.alwaysOnTop_(True);
+enable_synth = Button(main_window, Rect(10,10,100,30)).states_([
+    ["Enable",Color.new(0.0,0.0,0.0,1.0),Color.new(0.0,1.0,0.0,1.0)],
+    ["Disable",Color.new(0.0,0.0,0.0,1.0),Color.new(1.0,0.0,0.0,1.0)]
+]);
+pwm_knob = Knob(main_window, Rect(10, 100, 50, 50))
+    .background_(Color.new(0.5,0.0,0.0,1.0));
+pwm_label = StaticText.new(main_window,Rect(20,70,100,30)).string_("PWM");
+)
+
+
 
 
 
