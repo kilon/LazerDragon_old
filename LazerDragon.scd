@@ -21,9 +21,16 @@ k=KeyboardWindow();
 
 // GUI
 (
-var main_window, pwm_knob, pwm_label, enable_synth;
+var main_window, pwm_knob, pwm_label, enable_synth,
+screen_width, screen_height, window_width, window_height;
 Window.closeAll;
-main_window = Window.new("LazerDragon v0.01", Rect(100,1200,300,300)).front;
+screen_width = Window.screenBounds.width;
+screen_height = Window.screenBounds.height;
+window_width = 960;
+window_height = 540;
+//screen_width
+//screen_height
+main_window = Window.new("LazerDragon v0.01", Rect(100,screen_height - window_height,960,540)).front;
 main_window.alwaysOnTop_(True);
 enable_synth = Button(main_window, Rect(10,10,100,30)).states_([
     ["Enable",Color.new(0.0,0.0,0.0,1.0),Color.new(0.0,1.0,0.0,1.0)],
